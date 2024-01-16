@@ -1,4 +1,4 @@
-class GetMeta(type):
+class GetSetMeta(type):
     def __new__(mcs, class_name, bases, input_attrs):
         output_attrs = {}
         for name, val in input_attrs.items():
@@ -9,7 +9,7 @@ class GetMeta(type):
         return type(class_name, bases, output_attrs)
 
 
-class Circle(metaclass=GetMeta):
+class Circle(metaclass=GetSetMeta):
     radius = 5.0
 
 
